@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Holiday Code Showcase</title>
+    <!-- Importing a festive font -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CHRISTMAS COLOR PALETTE --- */
+        :root {
+            --primary-red: #c0392b;      /* Deep Christmas Red */
+            --primary-green: #27ae60;    /* Evergreen Green */
+            --accent-gold: #f1c40f;      /* Gold Star Yellow */
+            --text-dark: #2c3e50;        /* Navy/Charcoal */
+            --background-snow: #ecf0f1;  /* Snow White Background */
+            --card-glow: rgba(192, 57, 43, 0.4); /* Red glow for hover */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Merriweather', serif;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-snow);
+            color: var(--text-dark);
+        }
+
+        /* --- HEADER STYLING (The Wreath) --- */
+        header {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-bottom: 8px solid var(--primary-green);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            margin-bottom: 5px;
+            font-size: 3.5em;
+            text-shadow: 2px 2px 0 var(--text-dark);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        /* --- APP CONTAINER (The Layout) --- */
+        .app-container {
+            display: grid;
+            /* 2 columns on desktop, 1 on mobile */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* --- INDIVIDUAL APP CARD STYLING --- */
+        .app-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--primary-green);
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--card-glow);
+        }
+
+        .app-card h2 {
+            color: var(--primary-red);
+            font-family: var(--font-display);
+            font-size: 1.8em;
+            margin-top: 0;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .app-card .description {
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        /* --- DETAILS (TAGS) STYLING --- */
+        .details {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .details span {
+            padding: 7px 12px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .details .language {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        .details .topic {
+            background-color: var(--accent-gold);
+            color: var(--text-dark);
+        }
+
+        /* --- CTA BUTTON STYLING (The Gift Tag) --- */
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-red);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #e74c3c;
+            box-shadow: 0 4px 10px var(--card-glow);
+        }
+        
+        /* --- FOOTER STYLING --- */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: var(--primary-red);
+            color: #f0f0f0;
+            margin-top: 40px;
+            font-size: 0.9em;
+            border-top: 3px solid var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎁 Bradley's Holiday Code Showcase 🎄</h1>
+        <p>A collection of computer science projects, wrapped and ready for review.</p>
+    </header>
+
+    <main class="app-container">
+
+        <!-- Project 1: N-Queens -->
+        <section class="app-card">
+            <h2>Tic-Tac-Toe ❌⭕️</h2>
+            <p class="description">
+                An interactive, American flag-themed version of the classic Tic-Tac-Toe! This project showcases the fundamentals of coding a simple and iconic game in MIT's App Inventor.
+            </p>
+            <div class="details">
+            </div>
+            <a href="#code1" target="_blank" class="cta-button">View Project Code</a>
+        </section>
+
+        <!-- Project 2: BST -->
+        <section class="app-card">
+            <h2>Odometer 📟</h2>
+            <p class="description">
+                This mobile application, developed using MIT App Inventor, serves as a large-format digital counter. The project demonstrates the implementation of user input handling (buttons to increment/reset the count) and the use of local storage to ensure the odometer's value persists throughout the use of the app.
+            </p>
+            <div class="details">
+            </div>
+            <a href="#code2" target="_blank" class="cta-button">View Project Code</a>
+        </section>
+
+        <!-- Project 3: Web Scraper (Renumbered from old Project 4) -->
+        <section class="app-card">
+            <h2>Project 3</h2>
+            <p class="description">
+                A command-line web scraper built using Python to collect and parse non-sensitive, public data. This project showcases practical application of networking concepts and data handling.
+            </p>
+            <div class="details">
+            </div>
+            <a href="#code3" target="_blank" class="cta-button">View Project Code</a>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>Developed for Computer Science Class | Wishing You Happy Holidays and Bug-Free Code!</p>
+    </footer>
+
+</body>
+</html>

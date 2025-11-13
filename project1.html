@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 Details | Tic-Tac-Toe Game</title>
+    <!-- Importing a festive font -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CHRISTMAS COLOR PALETTE --- */
+        :root {
+            --primary-red: #c0392b;      /* Deep Christmas Red */
+            --primary-green: #27ae60;    /* Evergreen Green */
+            --accent-gold: #f1c40f;      /* Gold Star Yellow */
+            --text-dark: #2c3e50;        /* Navy/Charcoal */
+            --background-snow: #ecf0f1;  /* Snow White Background */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Merriweather', serif;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-snow);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER STYLING --- */
+        header {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+            border-bottom: 8px solid var(--primary-green);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0 var(--text-dark);
+        }
+
+        /* --- CONTENT CONTAINER --- */
+        .content-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- SECTION STYLING --- */
+        .project-section h2 {
+            color: var(--primary-red);
+            font-family: var(--font-display);
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        /* --- MEDIA SHOWCASE STYLING (For Photos/Videos) --- */
+        .media-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .media-slot {
+            background-color: #e0e0e0;
+            min-height: 250px; /* Gives space for images/videos */
+            border: 3px dashed var(--primary-green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-style: italic;
+            font-weight: bold;
+            overflow: hidden; /* Important for embedded media */
+        }
+        
+        .media-slot img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Dedicated style for code blocks */
+        .code-image-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .code-image-container img {
+            max-width: 90%; /* Use more width for code blocks */
+            height: auto;
+            border: 2px solid var(--text-dark);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* --- LIST STYLING (Skills) --- */
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-list li {
+            background-color: var(--background-snow);
+            padding: 10px 15px;
+            border-left: 5px solid var(--primary-red);
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        /* --- FOOTER & BACK BUTTON --- */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: var(--primary-red);
+            color: #f0f0f0;
+            margin-top: 40px;
+            font-size: 0.9em;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: var(--primary-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #2ecc71;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .media-showcase {
+                grid-template-columns: 1fr;
+            }
+            .code-image-container img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Project 1: Tic-Tac-Toe </h1>
+        <p>A detailed look at the American Flag-Themed Mobile Game</p>
+    </header>
+
+    <div class="content-container">
+
+        <a href="index.html" class="back-button">← Back to Portfolio</a>
+
+        <div class="project-section">
+            <h2>Screenshots & Demos</h2>
+            <div class="media-showcase">
+                <!-- SLOT 1: Add your main image here -->
+                <div class="media-slot" style="min-height: auto;">
+                    <!-- IMAGE ADDED HERE -->
+                    <img src="Tic tac toe.png" alt="Screenshot of the MIT App Inventor Tic-Tac-Toe game" style="max-width: 80%; border: none;">
+                </div>
+                
+                <!-- SLOT 2: Add another image or video here -->
+                <div class="media-slot">
+                    Video/Gif Space
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 0.9em; color: #777;">Main game screen on the left. You can add a video or another view on the right!</p>
+        </div>
+
+        <div class="project-section">
+            <h2>Project Overview & Game Description</h2>
+            <p>This mobile application is a fully functional, two-player version of the classic Tic-Tac-Toe game, developed using **MIT App Inventor**. The project was designed as a fun exercise in implementing core game logic and providing a visually distinct user experience.</p>
+            <p>The game features a high-contrast **red, white, and blue** American flag theme, replacing the traditional 'X' and 'O' with a turn-based system. The primary goal was to ensure the game accurately tracks the state of the 3x3 grid and immediately identifies a winner when three markers align horizontally, vertically, or diagonally.</p>
+        </div>
+
+        <div class="project-section">
+            <h2>Technical Skills Demonstrated</h2>
+            <p>The development process allowed me to practice several core programming concepts:</p>
+            <ul class="skill-list">
+                <li>**Event Handling:** Implementing block code that responds precisely to each of the nine button presses on the game board.</li>
+                <li>**Conditional Logic (If/Else):** Writing the complex logic required to check all eight winning scenarios.</li>
+                <li>**State Management:** Using variables (blocks) to manage player turns, track filled cells, and prevent double-clicks on the same square.</li>
+                <li>**Procedural Abstraction:** Creating separate functions (procedures) for tasks like checking the win condition and resetting the board to keep the code organized.</li>
+                <li>**Mobile UI Design:** Arranging game elements for optimal clarity and tapability on a mobile screen.</li>
+            </ul>
+
+            <!-- NEW CODE SECTION ADDED HERE -->
+            <div class="code-image-container">
+                <img src="Screenshot 2025-11-10 at 2.47.00 PM.png" alt="MIT App Inventor blocks showing the game's logic for handling button clicks and updating the display.">
+                <p style="margin-top: 15px; font-size: 1em; color: var(--text-dark);">
+                    **Blocks in Action:** This screenshot shows the logic blocks responsible for managing the turns and checking if a cell has already been played.
+                </p>
+            </div>
+            <!-- END NEW CODE SECTION -->
+        </div>
+        
+        <a href="index.html" class="back-button">← Back to Portfolio</a>
+    </div>
+
+    <footer>
+        <p>Developed for Computer Science Class | Wishing You Happy Holidays and Bug-Free Code!</p>
+    </footer>
+
+</body>
+</html>

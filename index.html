@@ -6,9 +6,9 @@
     <title>The Holiday Code Showcase</title>
     <!-- Importing a festive font -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
+  
     <style>
-        /* --- CHRISTMAS COLOR PALETTE --- */
+        /* --- CHRISTMAS COLOR PAcLETTE --- */
         :root {
             --primary-red: #c0392b;      /* Deep Christmas Red */
             --primary-green: #27ae60;    /* Evergreen Green */
@@ -152,6 +152,21 @@
             font-size: 0.9em;
             border-top: 3px solid var(--accent-gold);
         }
+
+        /* --- NEW IMAGE STYLING --- */
+        .project-image-container {
+            margin-bottom: 20px;
+            border: 1px solid #ddd; /* Light border around the image */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image-container img {
+            width: 100%; /* Make image fill the container width */
+            height: auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -163,37 +178,52 @@
 
     <main class="app-container">
 
-        <!-- Project 1: N-Queens -->
+        <!-- Project 1: Tic-Tac-Toe (Now links to project1.html) -->
         <section class="app-card">
-            <h2>Tic-Tac-Toe ❌⭕️</h2>
+            <h2>Project 1: Tic-Tac-Toe</h2>
+
+            <div class="project-image-container">
+                <!-- UPDATED: Using your local file name -->
+                <img src="Tic tac toe.png" 
+                     alt="A screenshot of the American flag themed Tic-Tac-Toe game in MIT App Inventor.">
+            </div>
+
             <p class="description">
                 An interactive, American flag-themed version of the classic Tic-Tac-Toe! This project showcases the fundamentals of coding a simple and iconic game in MIT's App Inventor.
             </p>
             <div class="details">
+                <span class="language">Language: MIT App Inventor (Blocks)</span>
+                <span class="topic">Topic: Game Logic
+
+                </span>
             </div>
-            <a href="#code1" target="_blank" class="cta-button">View Project Code</a>
+            <a href="project1.html" class="cta-button">View Project Details</a>
         </section>
 
-        <!-- Project 2: BST -->
+        <!-- Project 2: Odometer -->
         <section class="app-card">
-            <h2>Odometer 📟</h2>
+            <h2>Project 2: Odometer </h2>
             <p class="description">
-                This mobile application, developed using MIT App Inventor, serves as a large-format digital counter. The project demonstrates the implementation of user input handling (buttons to increment/reset the count) and the use of local storage to ensure the odometer's value persists throughout the use of the app.
+                This mobile application, developed using **MIT App Inventor**, serves as a large-format digital counter. The project demonstrates the implementation of **user input handling** (buttons to increment/reset the count) and the use of **local storage** to ensure the odometer's value persists throughout the use of the app.
             </p>
             <div class="details">
+                <span class="language">Language: MIT App Inventor (Blocks)</span>
+                <span class="topic">Topic: Mobile Development, Data Persistence</span>
             </div>
-            <a href="#code2" target="_blank" class="cta-button">View Project Code</a>
+            <a href="project2.html" class="cta-button">View Project Details</a>
         </section>
 
-        <!-- Project 3: Web Scraper (Renumbered from old Project 4) -->
+        <!-- Project 3: Web Scraper -->
         <section class="app-card">
-            <h2>Project 3</h2>
+            <h2>Project 3: Web Scraper 🕸️</h2>
             <p class="description">
                 A command-line web scraper built using Python to collect and parse non-sensitive, public data. This project showcases practical application of networking concepts and data handling.
             </p>
             <div class="details">
+                <span class="language">Language: Python</span>
+                <span class="topic">Topic: Web Scraping, Networking</span>
             </div>
-            <a href="#code3" target="_blank" class="cta-button">View Project Code</a>
+            <a href="project3.html" class="cta-button">View Project Details</a>
         </section>
         
     </main>

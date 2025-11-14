@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   
     <style>
-        /* --- CHRISTMAS COLOR PAcLETTE --- */
+        /* --- CHRISTMAS COLOR PALETTE --- */
         :root {
             --primary-red: #c0392b;      /* Deep Christmas Red */
             --primary-green: #27ae60;    /* Evergreen Green */
@@ -178,14 +178,15 @@
 
     <main class="app-container">
 
-        <!-- Project 1: Tic-Tac-Toe (Now links to project1.html) -->
+        <!-- Project 1: Tic-Tac-Toe -->
         <section class="app-card">
             <h2>Project 1: Tic-Tac-Toe</h2>
 
             <div class="project-image-container">
-                <!-- UPDATED: Using your local file name -->
+                <!-- Tic-Tac-Toe Screenshot -->
                 <img src="Tic tac toe.png" 
-                     alt="A screenshot of the American flag themed Tic-Tac-Toe game in MIT App Inventor.">
+                     alt="A screenshot of the American flag themed Tic-Tac-Toe game in MIT App Inventor."
+                     onerror="this.onerror=null; this.src='https://placehold.co/400x300/27ae60/ffffff?text=TicTacToe+App+Preview';">
             </div>
 
             <p class="description">
@@ -193,16 +194,22 @@
             </p>
             <div class="details">
                 <span class="language">Language: MIT App Inventor (Blocks)</span>
-                <span class="topic">Topic: Game Logic
-
-                </span>
+                <span class="topic">Topic: Game Logic</span>
             </div>
-            <a href="project1.html" class="cta-button">View Project Details</a>
+            <a href="tictactoe_details.html" class="cta-button">View Project Details</a>
         </section>
 
         <!-- Project 2: Odometer -->
         <section class="app-card">
-            <h2>Project 2: Odometer </h2>
+            <h2>Project 2: Odometer</h2>
+            
+            <!-- Odometer Screenshot (WITH FALLBACK) -->
+            <div class="project-image-container">
+                <img src="Odometer.png" 
+                     alt="A screenshot of the MIT App Inventor Odometer app showing the digital counter."
+                     onerror="this.onerror=null; this.src='https://placehold.co/400x300/c0392b/ffffff?text=Odometer+App+Preview';">
+            </div>
+            
             <p class="description">
                 This mobile application, developed using **MIT App Inventor**, serves as a large-format digital counter. The project demonstrates the implementation of **user input handling** (buttons to increment/reset the count) and the use of **local storage** to ensure the odometer's value persists throughout the use of the app.
             </p>
@@ -215,7 +222,7 @@
 
         <!-- Project 3: Web Scraper -->
         <section class="app-card">
-            <h2>Project 3: Web Scraper 🕸️</h2>
+            <h2>Project 3: Web Scraper</h2>
             <p class="description">
                 A command-line web scraper built using Python to collect and parse non-sensitive, public data. This project showcases practical application of networking concepts and data handling.
             </p>

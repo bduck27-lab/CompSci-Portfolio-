@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 Details | Digital Odometer</title>
+    <!-- Importing a festive font -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CHRISTMAS COLOR PALETTE (Copied from index.html for consistency) --- */
+        :root {
+            --primary-red: #c0392b;      /* Deep Christmas Red */
+            --primary-green: #27ae60;    /* Evergreen Green */
+            --accent-gold: #f1c40f;      /* Gold Star Yellow */
+            --text-dark: #2c3e50;        /* Navy/Charcoal */
+            --background-snow: #ecf0f1;  /* Snow White Background */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Merriweather', serif;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-snow);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER STYLING --- */
+        header {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+            border-bottom: 8px solid var(--primary-green);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0 var(--text-dark);
+        }
+
+        /* --- CONTENT CONTAINER --- */
+        .content-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- SECTION STYLING --- */
+        .project-section h2 {
+            color: var(--primary-red);
+            font-family: var(--font-display);
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        /* --- MEDIA SHOWCASE STYLING (For Photos/Videos) --- */
+        .media-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .media-slot {
+            background-color: #e0e0e0;
+            min-height: 250px; /* Gives space for images/videos */
+            border: 3px dashed var(--primary-green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-style: italic;
+            font-weight: bold;
+            overflow: hidden; /* Important for embedded media */
+        }
+        
+        .media-slot img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border: none !important; /* Override dashed border */
+            min-height: auto;
+        }
+
+        /* Dedicated style for code blocks */
+        .code-image-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .code-image-container img {
+            max-width: 90%; /* Use more width for code blocks */
+            height: auto;
+            border: 2px solid var(--text-dark);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* --- LIST STYLING (Skills) --- */
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-list li {
+            background-color: var(--background-snow);
+            padding: 10px 15px;
+            border-left: 5px solid var(--primary-red);
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        /* --- FOOTER & BACK BUTTON --- */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: var(--primary-red);
+            color: #f0f0f0;
+            margin-top: 40px;
+            font-size: 0.9em;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: var(--primary-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #2ecc71;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .media-showcase {
+                grid-template-columns: 1fr;
+            }
+            .code-image-container img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Project 2: Odometer</h1>
+        <p>A deep dive into persistent data storage in a mobile application</p>
+    </header>
+
+    <div class="content-container">
+
+        <a href="index.html" class="back-button">← Back to Portfolio</a>
+
+        <div class="project-section">
+            <h2>App Demonstration & User Interface</h2>
+            <div class="media-showcase">
+                <!-- SLOT 1: Main Odometer Screenshot -->
+                <div class="media-slot" style="min-height: auto;">
+                    <img src="Odometer.png" alt="Screenshot of the MIT App Inventor Odometer displaying a digital counter and reset button.">
+                </div>
+                
+                <!-- SLOT 2: Code blocks screenshot for local storage -->
+                <div class="media-slot" style="min-height: auto;">
+                    <p>This slot can be used for a short video or animation demonstrating the counter in action.</p>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 0.9em; color: #777;">The Odometer features a clean, large-digit interface for easy reading, alongside a centralized "Reset Counter" button.</p>
+        </div>
+
+        <div class="project-section">
+            <h2>Project Overview & Data Persistence</h2>
+            <p>The Odometer project was designed to solve a fundamental challenge in application development: **data persistence**. Unlike a simple calculator that resets every time you close it, this odometer uses **Local Storage** (a component in MIT App Inventor) to remember its current count.</p>
+            <p>This means if the user closes the app, reboots their device, or moves to a different screen and comes back, the odometer will always display the number it was at last. This is a crucial concept for any application that needs to save user progress or settings.</p>
+        </div>
+
+        <div class="project-section">
+            <h2>Technical Skills Demonstrated</h2>
+            <p>The development highlighted key skills in managing application data:</p>
+            <ul class="skill-list">
+                <li>**Data Persistence:** Implementing 'Load' and 'Save' functions using the local storage component. The 'Save' function runs every time the counter changes.</li>
+                <li>**Counting Logic:** Handling the logic for an odometer display, where incrementing the "ones" column rolls over to increment the "tens" column, and so on.</li>
+                <li>**User Input Handling:** Efficiently connecting button clicks to corresponding numerical operations (counting and reset).</li>
+                <li>**Initialization Logic:** Writing code that runs when the app starts up, checking if a saved value exists and loading it, or setting the counter to zero if it's the first time running the app.</li>
+            </ul>
+
+            <!-- CODE SECTION: Displaying the Logic Blocks for Persistence and Counting -->
+            <div class="code-image-container">
+                <img src="OdometerBlocks.png" alt="MIT App Inventor blocks showing the complex logic for updating digits across multiple places in the counter.">
+                <p style="margin-top: 15px; font-size: 1em; color: var(--text-dark);">
+                    **Counting Logic Blocks:** This complex set of blocks manages the core odometer function, handling the "rollover" from 9 to 0 and incrementing the next digit (e.g., from 09 to 10), ensuring the count is always mathematically correct.
+                </p>
+            </div>
+            <!-- END CODE SECTION -->
+        </div>
+        
+        <a href="index.html" class="back-button">← Back to Portfolio</a>
+    </div>
+
+    <footer>
+        <p>Developed for Computer Science Class | Wishing You Happy Holidays and Bug-Free Code!</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3 Details | Balloon Popper Game</title>
+    <!-- Importing a festive font -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CHRISTMAS COLOR PALETTE (Copied from index.html for consistency) --- */
+        :root {
+            --primary-red: #c0392b;      /* Deep Christmas Red */
+            --primary-green: #27ae60;    
+            --accent-gold: #f1c40f;      
+            --text-dark: #2c3e50;        
+            --background-snow: #ecf0f1;  
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Merriweather', serif;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-snow);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER STYLING --- */
+        header {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+            border-bottom: 8px solid var(--primary-green);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 3em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0 var(--text-dark);
+        }
+
+        /* --- CONTENT CONTAINER --- */
+        .content-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- SECTION STYLING --- */
+        .project-section h2 {
+            color: var(--primary-red);
+            font-family: var(--font-display);
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        /* --- MEDIA SHOWCASE STYLING (For Photos/Videos) --- */
+        .media-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .media-slot {
+            background-color: #e0e0e0;
+            min-height: 250px; 
+            border: 3px dashed var(--primary-green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-style: italic;
+            font-weight: bold;
+            overflow: hidden; 
+        }
+        
+        .media-slot img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border: none !important;
+            min-height: auto;
+        }
+
+        /* Dedicated style for code blocks */
+        .code-image-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .code-image-container img {
+            max-width: 90%; 
+            height: auto;
+            border: 2px solid var(--text-dark);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* --- LIST STYLING (Skills) --- */
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-list li {
+            background-color: var(--background-snow);
+            padding: 10px 15px;
+            border-left: 5px solid var(--primary-red);
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        /* --- FOOTER & BACK BUTTON --- */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: var(--primary-red);
+            color: #f0f0f0;
+            margin-top: 40px;
+            font-size: 0.9em;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: var(--primary-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #2ecc71;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .media-showcase {
+                grid-template-columns: 1fr;
+            }
+            .code-image-container img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Project 3: Balloon Popper Game 🎈🎯</h1>
+        <p>Exploring randomization and real-time interaction in mobile game development</p>
+    </header>
+
+    <div class="content-container">
+
+        <a href="index.html" class="back-button">← Back to Portfolio</a>
+
+        <div class="project-section">
+            <h2>Game Interface & Demonstration</h2>
+            <div class="media-showcase">
+                <!-- SLOT 1: Main Game Screenshot (Phoneneee.png) -->
+                <div class="media-slot" style="min-height: auto;">
+                    <img src="Phoneneee.png" alt="Screenshot of the Balloon Popper Game interface, showing a blue balloon against a pixelated blue sky and clouds."
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x300/f1c40f/2c3e50?text=Game+Screenshot+Needed';">
+                </div>
+                
+                <!-- SLOT 2: Placeholder for another view or video -->
+                <div class="media-slot">
+                    <p>Gameplay demonstration (video or secondary screenshot) slot.</p>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 0.9em; color: #777;">The game features a large playing canvas, a moving sprite (the balloon), and a score display at the top or bottom.</p>
+        </div>
+
+        <div class="project-section">
+            <h2>Project Overview: Random Movement & Scoring</h2>
+            <p>The **Balloon Popper Game** is a demonstration of core game mechanics using **MIT App Inventor**. The main goal was to create an interactive challenge by making a sprite move **randomly** and rewarding the player for successfully interacting with it (i.e., popping the balloon).</p>
+            <p>The application uses the **Canvas** component as the game board and a **Sprite** component (which could be an image of a balloon) to represent the target. A **Timer** component is essential for triggering the movement at regular intervals, ensuring the balloon is always on the move and difficult to catch.</p>
+        </div>
+
+        <div class="project-section">
+            <h2>Technical Skills Demonstrated</h2>
+            <p>This project showcases my ability to manage real-time game state and random events:</p>
+            <ul class="skill-list">
+                <li>**Randomization:** Using the built-in **Random Integer** block to calculate new X and Y coordinates for the balloon's next position.</li>
+                <li>**Timer Control:** Implementing a **Clock** component to create a game loop, moving the sprite every fraction of a second, which is key for making the game challenging.</li>
+                <li>**Event-Driven Interaction:** Using the **Sprite.Touched** event block to detect when the player taps the balloon.</li>
+                <li>**State Updating:** Updating a score **variable** and immediately displaying the new score in a **Label** component upon a successful pop.</li>
+                <li>**Coordinate Systems:** Understanding and using the Canvas's X and Y coordinate system to keep the balloon within the visible playing area.</li>
+            </ul>
+
+            <!-- CODE SECTION: Displaying the Logic Blocks for Random Movement (Blocksss.png) -->
+            <div class="code-image-container">
+                <p style="margin-top: 15px; font-size: 1em; color: var(--text-dark);">
+                    **Movement and Scoring Logic Blocks:** This comprehensive set of blocks manages the entire game flow, from initial setup to the **Clock Timer** that moves the balloon and the **touch events** that update the score.
+                </p>
+                <img src="Blocksss.png" alt="MIT App Inventor blocks showing the complex logic for the Balloon Popper Game, including timers, random movement, and scoring."
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x250/27ae60/ffffff?text=Random+Movement+Logic+Blocks+Needed';">
+            </div>
+            <!-- END CODE SECTION -->
+        </div>
+        
+        <a href="index.html" class="back-button">← Back to Portfolio</a>
+    </div>
+
+    <footer>
+        <p>Developed for Computer Science Class | Wishing You Happy Holidays and Bug-Free Code!</p>
+    </footer>
+
+</body>
+</html>

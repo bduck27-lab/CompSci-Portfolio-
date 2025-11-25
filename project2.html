@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 2 Details | Digital Odometer</title>
     <!-- Importing a festive font -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     
+    <!-- IMPORTANT: Link to the odometer logic script -->
+    <script src="odometer_logic.js"></script> 
+
     <style>
         /* --- CHRISTMAS COLOR PALETTE (Copied from index.html for consistency) --- */
         :root {
@@ -17,6 +20,7 @@
             --background-snow: #ecf0f1;  /* Snow White Background */
             --font-display: 'Playfair Display', serif;
             --font-body: 'Merriweather', serif;
+            --font-mono: 'Share Tech Mono', monospace; /* Added for digital effect */
         }
 
         /* --- GLOBAL STYLES --- */
@@ -56,6 +60,11 @@
         }
 
         /* --- SECTION STYLING --- */
+        .project-section {
+             padding: 0 20px;
+             text-align: left;
+        }
+        
         .project-section h2 {
             color: var(--primary-red);
             font-family: var(--font-display);
@@ -134,6 +143,106 @@
             font-weight: bold;
             color: var(--text-dark);
         }
+        
+        /* --- ODOMETER APP STYLES (REQUIRED FOR LIVE DEMO) --- */
+        #app-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 450px; 
+            margin: 30px auto;
+        }
+        
+        .odometer-label {
+            font-family: var(--font-display);
+            font-size: 1.2em;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        #mileage-display {
+            font-family: var(--font-mono);
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--primary-red);
+            background-color: var(--text-dark); /* Dark background for digital effect */
+            padding: 15px 25px;
+            border-radius: 6px;
+            border: 3px solid var(--accent-gold);
+            margin-bottom: 25px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            text-align: right;
+            letter-spacing: 2px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 350px;
+            margin-bottom: 25px;
+        }
+
+        input[type="number"] {
+            flex-grow: 1;
+            padding: 12px;
+            border: 2px solid var(--primary-green);
+            border-radius: 6px;
+            font-size: 1em;
+            text-align: right;
+        }
+
+        .app-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        
+        #drive-button {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        
+        #backtrack-button {
+            background-color: #95a5a6; /* Neutral color for decrease */
+            color: white;
+        }
+
+        #reset-button {
+            background-color: var(--accent-gold);
+            color: var(--text-dark);
+        }
+
+        #add-custom-button {
+            background-color: var(--primary-red);
+            color: white;
+            white-space: nowrap;
+        }
+
+        .app-button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* --- END ODOMETER APP STYLES --- */
+
 
         /* --- FOOTER & BACK BUTTON --- */
         footer {
@@ -170,14 +279,17 @@
             .code-image-container img {
                 max-width: 100%;
             }
+            .button-group {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Project 2: Odometer</h1>
-        <p>A deep dive into persistent data storage in a mobile application</p>
+        <h1>Project 2: Digital Odometer Simulator</h1>
+        <p>A look at implementing counters and input validation</p>
     </header>
 
     <div class="content-container">
@@ -205,7 +317,7 @@
             <p>The Odometer project was designed to solve a fundamental challenge in application development: **data persistence**. Unlike a simple calculator that resets every time you close it, this odometer uses **Local Storage** (a component in MIT App Inventor) to remember its current count.</p>
             <p>This means if the user closes the app, reboots their device, or moves to a different screen and comes back, the odometer will always display the number it was at last. This is a crucial concept for any application that needs to save user progress or settings.</p>
         </div>
-
+        
         <div class="project-section">
             <h2>Technical Skills Demonstrated</h2>
             <p>The development highlighted key skills in managing application data:</p>
@@ -225,6 +337,34 @@
             </div>
             <!-- END CODE SECTION -->
         </div>
+
+        <!-- NEW LIVE APP SECTION (MOVED TO BOTTOM) -->
+        <div class="project-section" style="text-align: center; padding-bottom: 0;">
+            <h2 style="text-align: left;">Live Demo: Odometer Web App</h2>
+            <p style="text-align: left;">This web version uses the `odometer_logic.js` file to demonstrate the exact same core functionality. Try driving, backtracking, and adding a custom distance below!</p>
+        </div>
+
+        <div id="app-container">
+            <label class="odometer-label">TOTAL DISTANCE TRAVELED</label>
+            <!-- Mileage Display Area (Updated by JS) -->
+            <div id="mileage-display">0.00 miles</div> 
+            
+            <div class="button-group">
+                <!-- Fixed Distance Buttons -->
+                <button id="drive-button" class="app-button">Drive (+0.1)</button>
+                <button id="backtrack-button" class="app-button">Backtrack (-0.1)</button>
+            </div>
+
+            <div class="input-group">
+                <!-- Custom Distance Input -->
+                <input type="number" id="drive-input" placeholder="Enter custom distance (e.g., 5.5)">
+                <button id="add-custom-button" class="app-button">Add</button>
+            </div>
+            
+            <!-- Reset Button -->
+            <button id="reset-button" class="app-button" style="width: 100%; max-width: 350px;">Reset Odometer</button>
+        </div>
+        <!-- END LIVE APP SECTION -->
         
         <a href="index.html" class="back-button">← Back to Portfolio</a>
     </div>

@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1 Details | Tic-Tac-Toe Game</title>
+    <title>Project 1 Details | Playable Tic-Tac-Toe Game</title>
     <!-- Importing a festive font -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
+    <!-- IMPORTANT: Link to the game logic script.js file -->
+    <script src="script.js"></script> 
+
     <style>
         /* --- CHRISTMAS COLOR PALETTE --- */
         :root {
@@ -56,6 +59,11 @@
         }
 
         /* --- SECTION STYLING --- */
+        .project-section {
+             text-align: left; /* Ensure text alignment is good */
+             padding: 0 20px;
+        }
+
         .project-section h2 {
             color: var(--primary-red);
             font-family: var(--font-display);
@@ -79,7 +87,7 @@
 
         .media-slot {
             background-color: #e0e0e0;
-            min-height: 250px; /* Gives space for images/videos */
+            min-height: 250px; 
             border: 3px dashed var(--primary-green);
             border-radius: 10px;
             display: flex;
@@ -88,7 +96,7 @@
             color: #555;
             font-style: italic;
             font-weight: bold;
-            overflow: hidden; /* Important for embedded media */
+            overflow: hidden; 
         }
         
         .media-slot img {
@@ -107,7 +115,7 @@
         }
 
         .code-image-container img {
-            max-width: 90%; /* Use more width for code blocks */
+            max-width: 90%; 
             height: auto;
             border: 2px solid var(--text-dark);
             border-radius: 8px;
@@ -132,7 +140,94 @@
             font-weight: bold;
             color: var(--text-dark);
         }
+        
+        /* --- NEW GAME STYLES --- */
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px; 
+            margin: 30px auto;
+        }
 
+        #status {
+            font-family: var(--font-display);
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            height: 30px;
+            color: var(--text-dark);
+            font-weight: bold;
+        }
+
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+            width: 300px; 
+            height: 300px;
+            background-color: var(--primary-red);
+            border: 5px solid var(--primary-green);
+            border-radius: 8px;
+        }
+
+        .cell {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5em; 
+            font-family: var(--font-display);
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+        }
+
+        .cell:hover:not(.x):not(.o) {
+            background-color: #ffe0e0; 
+        }
+
+        .x {
+            color: var(--primary-green); 
+        }
+
+        .o {
+            color: var(--accent-gold); 
+        }
+
+        .win {
+            background-color: var(--primary-green) !important;
+            color: white !important;
+            animation: pulse-win 0.5s infinite alternate;
+        }
+
+        @keyframes pulse-win {
+            from { opacity: 1; }
+            to { opacity: 0.8; }
+        }
+
+        #reset-button {
+            padding: 12px 25px;
+            margin-top: 25px;
+            background-color: var(--accent-gold);
+            color: var(--text-dark);
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        #reset-button:hover {
+            background-color: #ffd740;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
         /* --- FOOTER & BACK BUTTON --- */
         footer {
             text-align: center;
@@ -167,6 +262,15 @@
             }
             .code-image-container img {
                 max-width: 100%;
+            }
+        }
+        @media (max-width: 450px) {
+            #board {
+                width: 250px;
+                height: 250px;
+            }
+            .cell {
+                font-size: 3em;
             }
         }
     </style>
@@ -206,7 +310,7 @@
         </div>
 
         <div class="project-section">
-            <h2>Technical Skills Demonstrated</h2>
+            <h2>Technical Skills Demonstrated (App Inventor)</h2>
             <p>The development process allowed me to practice several core programming concepts:</p>
             <ul class="skill-list">
                 <li>**Event Handling:** Implementing block code that responds precisely to each of the nine button presses on the game board.</li>
@@ -216,14 +320,43 @@
                 <li>**Mobile UI Design:** Arranging game elements for optimal clarity and tapability on a mobile screen.</li>
             </ul>
 
-            <!-- NEW CODE SECTION ADDED HERE -->
+            <!-- CODE BLOCKS IMAGE -->
             <div class="code-image-container">
                 <img src="CodeBlocks.png" alt="MIT App Inventor blocks showing the game's logic for handling button clicks and updating the display.">
                 <p style="margin-top: 15px; font-size: 1em; color: var(--text-dark);">
                     **Blocks in Action:** This screenshot shows the logic blocks responsible for managing the turns and checking if a cell has already been played.
                 </p>
             </div>
-            <!-- END NEW CODE SECTION -->
+        </div>
+
+        <!-- NEW: PLAYABLE WEB GAME SECTION -->
+        <div class="project-section" style="text-align: center; padding-bottom: 0;">
+            <h2 style="text-align: left;">Bonus: Play the Game in the Browser (JavaScript Version)</h2>
+            <p style="text-align: left;">To demonstrate versatility, I recreated the game's core logic using traditional web technologies (HTML, CSS, and JavaScript). This version shows how the same logical rules can be translated into text-based code for a web platform. **Try it out below!**</p>
+        </div>
+
+        <div id="game-container">
+            <!-- The status area is important for showing whose turn it is -->
+            <div id="status">Player X's Turn</div> 
+            
+            <!-- The board is where the JavaScript creates the 9 cells -->
+            <div id="board">
+                <!-- Cells are automatically generated by script.js -->
+            </div>
+            
+            <!-- The button resets the game state -->
+            <button id="reset-button">Restart Game</button>
+        </div>
+        
+        <!-- NEW: TECHNICAL SKILLS FOR WEB VERSION -->
+        <div class="project-section">
+            <h2>Technical Skills Demonstrated (Web Development)</h2>
+            <ul class="skill-list">
+                <li>**DOM Manipulation:** Creating and updating the game board elements dynamically using JavaScript.</li>
+                <li>**Event Listeners:** Attaching click handlers to each cell to detect player input.</li>
+                <li>**Game State Logic:** Implementing the win-checking algorithm and handling player turns (in `script.js`).</li>
+                <li>**CSS Grid:** Using modern CSS to create a responsive and clean board layout.</li>
+            </ul>
         </div>
         
         <a href="index.html" class="back-button">← Back to Portfolio</a>

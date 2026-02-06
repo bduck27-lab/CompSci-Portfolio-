@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 6 | Color Theory & RGB Mapping</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .color-demo-container {
+            background: #2c3e50;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 4px solid var(--accent-gold);
+            margin: 20px auto;
+            max-width: 700px;
+        }
+        
+        .snake-display {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            border: 3px solid #fff;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .rgb-visual {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .rgb-light {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .edu-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-red);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .back-nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .palette-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .palette-item {
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: white;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Project 6: Color Mapping</h1>
+        <p>From 0 and 1 to Millions of Colors</p>
+    </header>
+
+    <main class="content-container">
+        <div class="back-nav">
+            <a href="index.html" class="cta-button" style="max-width: 250px;">← Back to Portfolio</a>
+        </div>
+
+        <section class="project-section">
+            <h2>The "Snake" Color Map</h2>
+            <div class="color-demo-container">
+                <p style="color: white;">Below is an example of an indexed color map. Each number in the code represents a specific color in the palette.</p>
+                <img src="Snake .png" alt="Snake Pixel Art Mapping" class="snake-display">
+                
+                <div class="rgb-visual">
+                    <div class="rgb-light" style="background: #e74c3c;">R</div>
+                    <div class="rgb-light" style="background: #2ecc71;">G</div>
+                    <div class="rgb-light" style="background: #3498db;">B</div>
+                </div>
+
+                <div class="palette-grid">
+                    <div class="palette-item" style="background: #12; border: 1px solid #fff;">Code 18: Gray</div>
+                    <div class="palette-item" style="background: #27ae60;">Code 13: Green</div>
+                    <div class="palette-item" style="background: #c0392b;">Code 17: Red</div>
+                    <div class="palette-item" style="background: #000;">Code 1: Black</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h2>How Computers Display Color</h2>
+            
+            <div class="edu-box">
+                <h3>1. The RGB Model</h3>
+                <p>Unlike paint (where mixing colors gets darker), computer screens use <strong>Additive Color</strong>. By mixing Red, Green, and Blue light at different intensities, a screen can create over 16 million different colors!</p>
+            </div>
+
+            <div class="edu-box">
+                <h3>2. Indexed Color (The Snake Method)</h3>
+                <p>In the snake image above, the computer uses a "Palette." Instead of storing a complex color for every pixel, it stores a simple number. The computer looks at a table to see that a specific code means a specific shade. This makes images much smaller and faster to load.</p>
+            </div>
+
+            <div class="edu-box">
+                <h3>3. Bits Per Pixel</h3>
+                <p>While black and white images only need 1 bit per pixel, color images need much more. A standard high-quality image uses 24 bits for every single pixel—8 bits for Red, 8 for Green, and 8 for Blue.</p>
+            </div>
+        </section>
+
+        <div class="back-nav">
+            <a href="index.html" class="cta-button" style="max-width: 250px;">← Return to Portfolio</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Developed for Computer Science Class | Wishing You Happy Holidays!</p>
+    </footer>
+</body>
+</html>

@@ -3,171 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Holiday Code Showcase</title>
-    <!-- Importing a festive font -->
+    <title>Bradley's Holiday Code Showcase</title>
+    <!-- Importing festive fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  
-    <style>
-        /* --- CHRISTMAS COLOR PALETTE --- */
-        :root {
-            --primary-red: #c0392b;      /* Deep Christmas Red */
-            --primary-green: #27ae60;    /* Evergreen Green */
-            --accent-gold: #f1c40f;      /* Gold Star Yellow */
-            --text-dark: #2c3e50;        /* Navy/Charcoal */
-            --background-snow: #ecf0f1;  /* Snow White Background */
-            --card-glow: rgba(192, 57, 43, 0.4); /* Red glow for hover */
-            --font-display: 'Playfair Display', serif;
-            --font-body: 'Merriweather', serif;
-        }
-
-        /* --- GLOBAL STYLES --- */
-        body {
-            font-family: var(--font-body);
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-snow);
-            color: var(--text-dark);
-        }
-
-        /* --- HEADER STYLING (The Wreath) --- */
-        header {
-            background-color: var(--primary-red);
-            color: white;
-            padding: 60px 20px 40px;
-            text-align: center;
-            border-bottom: 8px solid var(--primary-green);
-        }
-
-        header h1 {
-            font-family: var(--font-display);
-            margin-bottom: 5px;
-            font-size: 3.5em;
-            text-shadow: 2px 2px 0 var(--text-dark);
-        }
-
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        /* --- APP CONTAINER (The Layout) --- */
-        .app-container {
-            display: grid;
-            /* 2 columns on desktop, 1 on mobile */
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* --- INDIVIDUAL APP CARD STYLING --- */
-        .app-card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            transition: all 0.3s ease;
-            border-top: 5px solid var(--primary-green);
-        }
-
-        .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px var(--card-glow);
-        }
-
-        .app-card h2 {
-            color: var(--primary-red);
-            font-family: var(--font-display);
-            font-size: 1.8em;
-            margin-top: 0;
-            border-bottom: 2px solid var(--accent-gold);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-        .app-card .description {
-            line-height: 1.7;
-            margin-bottom: 20px;
-            color: #555;
-            font-size: 0.95em;
-        }
-
-        /* --- DETAILS (TAGS) STYLING --- */
-        .details {
-            margin-top: 15px;
-            margin-bottom: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .details span {
-            padding: 7px 12px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .details .language {
-            background-color: var(--primary-green);
-            color: white;
-        }
-
-        .details .topic {
-            background-color: var(--accent-gold);
-            color: var(--text-dark);
-        }
-
-        /* --- CTA BUTTON STYLING (The Gift Tag) --- */
-        .cta-button {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            background-color: var(--primary-red);
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background-color: #e74c3c;
-            box-shadow: 0 4px 10px var(--card-glow);
-        }
-        
-        /* --- FOOTER STYLING --- */
-        footer {
-            text-align: center;
-            padding: 25px;
-            background-color: var(--primary-red);
-            color: #f0f0f0;
-            margin-top: 40px;
-            font-size: 0.9em;
-            border-top: 3px solid var(--accent-gold);
-        }
-
-        /* --- NEW IMAGE STYLING --- */
-        .project-image-container {
-            margin-bottom: 20px;
-            border: 1px solid #ddd; /* Light border around the image */
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-image-container img {
-            width: 100%; /* Make image fill the container width */
-            height: auto;
-            display: block;
-        }
-    </style>
+    <!-- Linking the CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -180,63 +20,110 @@
 
         <!-- Project 1: Tic-Tac-Toe -->
         <section class="app-card">
-            <h2>Project 1: Tic-Tac-Toe</h2>
-
-            <div class="project-image-container">
-                <!-- Tic-Tac-Toe Screenshot -->
-                <img src="Tic tac toe.png" 
-                     alt="A screenshot of the American flag themed Tic-Tac-Toe game in MIT App Inventor."
-                     onerror="this.onerror=null; this.src='https://placehold.co/400x300/27ae60/ffffff?text=TicTacToe+App+Preview';">
-            </div>
-
-            <p class="description">
-                An interactive, American flag-themed version of the classic Tic-Tac-Toe! This project showcases the fundamentals of coding a simple and iconic game in MIT's App Inventor.
-            </p>
-            <div class="details">
-                <span class="language">Language: MIT App Inventor (Blocks)</span>
-                <span class="topic">Topic: Game Logic</span>
+            <div>
+                <h2>Project 1: Tic-Tac-Toe</h2>
+                <div class="project-image-container">
+                    <img src="Tic tac toe.png" alt="Tic-Tac-Toe Preview" onerror="this.onerror=null; this.src='https://placehold.co/400x300/27ae60/ffffff?text=TicTacToe+Preview';">
+                </div>
+                <p class="description">
+                    An interactive, American flag-themed version of Tic-Tac-Toe! Built with MIT App Inventor logic and ported to JavaScript.
+                </p>
+                <div class="details">
+                    <span class="language">Blocks & JS</span>
+                    <span class="topic">Game Logic</span>
+                </div>
             </div>
             <a href="project1.html" class="cta-button">View Project Details</a>
         </section>
 
         <!-- Project 2: Odometer -->
         <section class="app-card">
-            <h2>Project 2: Odometer</h2>
-            
-            <!-- Odometer Screenshot (WITH FALLBACK) -->
-            <div class="project-image-container">
-                <img src="Odometer.png" 
-                     alt="A screenshot of the MIT App Inventor Odometer app showing the digital counter."
-                     onerror="this.onerror=null; this.src='https://placehold.co/400x300/c0392b/ffffff?text=Odometer+App+Preview';">
-            </div>
-            
-            <p class="description">
-                This mobile application, developed using **MIT App Inventor**, serves as a large-format digital counter. The project demonstrates the implementation of **user input handling** (buttons to increment/reset the count) and the use of **local storage** to ensure the odometer's value persists throughout the use of the app.
-            </p>
-            <div class="details">
-                <span class="language">Language: MIT App Inventor (Blocks)</span>
-                <span class="topic">Topic: Mobile Development, Data Persistence</span>
+            <div>
+                <h2>Project 2: Odometer</h2>
+                <div class="project-image-container">
+                    <img src="Odometer.png" alt="Odometer Preview" onerror="this.onerror=null; this.src='https://placehold.co/400x300/c0392b/ffffff?text=Odometer+Preview';">
+                </div>
+                <p class="description">
+                    A digital counter demonstrating **user input handling** and **data persistence** using local storage components.
+                </p>
+                <div class="details">
+                    <span class="language">Blocks & JS</span>
+                    <span class="topic">Data Persistence</span>
+                </div>
             </div>
             <a href="project2.html" class="cta-button">View Project Details</a>
         </section>
 
-        <!-- Project 3: Balloon Popper Game -->
+        <!-- Project 3: Balloon Popper -->
         <section class="app-card">
-            <h2>Project 3: Balloon Popper Game</h2>
-            <div class="project-image-container">
-                <!-- Balloon Popper Screenshot -->
-                <img src="Phoneneee.png" 
-                     alt="A screenshot of the Balloon Popper game showing a blue balloon against a pixelated sky."
-                     onerror="this.onerror=null; this.src='https://placehold.co/400x300/f1c40f/c0392b?text=Balloon+Popper+Preview';">
-            </div>
-            <p class="description">
-                A fun, touch-based mobile game created in MIT App Inventor. This project features a sprite that moves **randomly** across the screen, challenging the user to tap (pop) it to score points using a real-time counter. This demonstrates principles of **event handling** and **game development** on a mobile platform.
-            </p>
-            <div class="details">
-                <span class="language">Language: MIT App Inventor (Blocks)</span>
-                <span class="topic">Topic: Game Development, Randomization, Sprite Animation</span>
+            <div>
+                <h2>Project 3: Balloon Popper</h2>
+                <div class="project-image-container">
+                    <img src="Phoneneee.png" alt="Balloon Popper Preview" onerror="this.onerror=null; this.src='https://placehold.co/400x300/f1c40f/c0392b?text=Balloon+Popper';">
+                </div>
+                <p class="description">
+                    A mobile game featuring **randomization** and **sprite animation**. Tap the balloon to increase your score!
+                </p>
+                <div class="details">
+                    <span class="language">Blocks & JS</span>
+                    <span class="topic">Game Development</span>
+                </div>
             </div>
             <a href="project3.html" class="cta-button">View Project Details</a>
+        </section>
+
+        <!-- Project 4: Binary Odometer -->
+        <section class="app-card">
+            <div>
+                <h2>Project 4: Binary Odometer</h2>
+                <div class="project-image-container">
+                    <img src="https://placehold.co/400x300/2c3e50/f1c40f?text=0101+Binary+System" alt="Binary System">
+                </div>
+                <p class="description">
+                    A deep dive into how computers count using Base-2 logic. Visualizes 8 bits of data counting from 0 to 255.
+                </p>
+                <div class="details">
+                    <span class="language">JavaScript</span>
+                    <span class="topic">Binary Logic</span>
+                </div>
+            </div>
+            <a href="project4.html" class="cta-button">View Project Details</a>
+        </section>
+
+        <!-- Project 5: Binary Image Mapping -->
+        <section class="app-card">
+            <div>
+                <h2>Project 5: Image Mapping</h2>
+                <div class="project-image-container">
+                    <img src="https://placehold.co/400x300/34495e/27ae60?text=Pixel+Grid+Mapping" alt="Pixel Mapping">
+                </div>
+                <p class="description">
+                    Discover how computers "see." This project shows how binary 0s and 1s map to pixels to create black and white digital images.
+                </p>
+                <div class="details">
+                    <span class="language">JavaScript</span>
+                    <span class="topic">Pixel Mapping</span>
+                </div>
+            </div>
+            <a href="project5.html" class="cta-button">View Project Details</a>
+        </section>
+
+        <!-- Project 6: Color Theory & RGB Mapping -->
+        <section class="app-card">
+            <div>
+                <h2>Project 6: Color Theory & RGB</h2>
+                <div class="project-image-container">
+                    <img src="Snake .png" alt="Snake Pixel Art" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2c3e50/27ae60?text=Color+Mapping+Preview';">
+                </div>
+                <p class="description">
+                    An exploration into how computers display millions of colors using indexed palettes and the RGB color model.
+                </p>
+                <div class="details">
+                    <span class="language">Digital Logic</span>
+                    <span class="topic">Color Systems</span>
+                </div>
+            </div>
+            <a href="project6.html" class="cta-button">View Project Details</a>
         </section>
         
     </main>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4 | Binary Odometer & Logic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Odometer Styling */
+        .binary-container {
+            background: #2c3e50;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 4px solid var(--accent-gold);
+            margin: 20px auto;
+            max-width: 550px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .binary-display {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 3.5em;
+            color: var(--accent-gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .decimal-hint {
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+        .bit-values {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            color: #bdc3c7;
+            font-size: 0.8em;
+            margin-top: 10px;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .back-nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        /* Educational Section Styling */
+        .edu-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-green);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .edu-box h3 {
+            color: var(--primary-red);
+            margin-top: 0;
+        }
+        .bit-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        .bit-table th, .bit-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .bit-table th {
+            background: var(--background-snow);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Project 4: Binary Odometer</h1>
+        <p>Understanding the "Language of Switches"</p>
+    </header>
+
+    <main class="content-container">
+        <!-- TOP NAVIGATION -->
+        <div class="back-nav">
+            <a href="index.html" class="cta-button" style="max-width: 250px;">← Back to Portfolio</a>
+        </div>
+
+        <!-- THE INTERACTIVE APP -->
+        <section class="project-section">
+            <h2>Interactive 8-Bit Counter</h2>
+            <div class="binary-container">
+                <div class="decimal-hint">Decimal: <span id="dec-val" style="color:var(--accent-gold); font-weight:bold;">0</span></div>
+                <div id="bin-display" class="binary-display">00000000</div>
+                <div class="bit-values">
+                    <span>128</span><span>64</span><span>32</span><span>16</span>
+                    <span>8</span><span>4</span><span>2</span><span>1</span>
+                </div>
+                
+                <div class="button-grid">
+                    <button id="step-up" class="cta-button" style="margin:0;">+1 (Add)</button>
+                    <button id="step-down" class="cta-button" style="margin:0; background:#7f8c8d; border-bottom-color:#34495e;">-1 (Sub)</button>
+                    <button id="add-ten" class="cta-button" style="margin:0; background:var(--primary-green); border-bottom-color:#1e8449;">+10 (Jump)</button>
+                    <button id="random-btn" class="cta-button" style="margin:0; background:#8e44ad; border-bottom-color:#5b2c6f;">Random</button>
+                </div>
+                
+                <button id="reset-bin" class="cta-button" style="background:var(--primary-red); margin-top:10px; border-bottom-color:#7b241c;">Reset System</button>
+            </div>
+        </section>
+
+        <!-- DETAILED INFORMATION SECTION -->
+        <section class="project-section">
+            <h2>What are Binary Numbers?</h2>
+            
+            <div class="edu-box">
+                <h3>1. The Base-2 System</h3>
+                <p>Humans count in <strong>Base-10</strong> (Decimal), likely because we have ten fingers. We use digits 0-9. Computers, however, use <strong>Base-2</strong> (Binary). They only have two states: <strong>0 (OFF)</strong> and <strong>1 (ON)</strong>. This is because computer processors are made of billions of tiny transistors that act as simple light switches.</p>
+            </div>
+
+            <div class="edu-box">
+                <h3>2. How the Math Works</h3>
+                <p>In Decimal, each place value is a power of 10 (1, 10, 100). In Binary, each place value is a <strong>power of 2</strong>. To find the value of a binary number, you simply add up the values of the "ON" bits.</p>
+                <table class="bit-table">
+                    <thead>
+                        <tr>
+                            <th>Bit Position</th>
+                            <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Place Value</strong></td>
+                            <td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>Example: The binary number <strong>00001010</strong> is 8 + 2, which equals <strong>10</strong> in decimal.</em></p>
+            </div>
+
+            <div class="edu-box">
+                <h3>3. Bits and Bytes</h3>
+                <p>A single 0 or 1 is called a <strong>Bit</strong>. A group of 8 bits (like the odometer above) is called a <strong>Byte</strong>. One byte can represent any number from 0 up to 255. When the odometer hits 255 and you add 1, it "overflows" and rolls back to 0!</p>
+            </div>
+
+            <div class="edu-box">
+                <h3>4. Why This Matters</h3>
+                <p>Everything you see on a computer—photos, videos, and games—is actually just a massive sequence of these 1s and 0s being processed millions of times per second.</p>
+            </div>
+        </section>
+
+        <!-- BOTTOM NAVIGATION -->
+        <div class="back-nav">
+            <a href="index.html" class="cta-button" style="max-width: 250px;">← Return to Portfolio</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Developed for Computer Science Class | Happy Holidays!</p>
+    </footer>
+
+    <script src="binary_logic.js"></script>
+</body>
+</html>

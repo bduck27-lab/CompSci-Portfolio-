@@ -1,92 +1,99 @@
-/* --- CHRISTMAS COLOR PALETTE --- */
+/* Global Variables & Theme */
 :root {
     --primary-red: #c0392b;
     --primary-green: #27ae60;
     --accent-gold: #f1c40f;
     --text-dark: #2c3e50;
     --background-snow: #ecf0f1;
-    --card-glow: rgba(192, 57, 43, 0.4);
-    --font-display: 'Playfair Display', serif;
+    --font-header: 'Playfair Display', serif;
     --font-body: 'Merriweather', serif;
 }
 
-/* --- GLOBAL STYLES --- */
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-snow);
-    color: var(--text-dark);
-    font-family: var(--font-body);
+/* Base Styles */
+* {
+    box-sizing: border-box;
 }
 
 body {
-    /* This allows the page to grow as long as needed */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--background-snow);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
-/* --- HEADER --- */
+/* Header & Footer */
 header {
     background-color: var(--primary-red);
     color: white;
-    padding: 60px 20px;
+    padding: 40px 20px;
     text-align: center;
-    border-bottom: 8px solid var(--primary-green);
+    border-bottom: 8px solid var(--accent-gold);
 }
 
 header h1 {
-    font-family: var(--font-display);
-    font-size: 3em;
+    font-family: var(--font-header);
+    font-size: 2.5em;
     margin: 0;
-    text-shadow: 2px 2px 0 var(--text-dark);
 }
 
-/* --- CONTAINER & GRID --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--text-dark);
+    color: white;
+    margin-top: 40px;
+}
+
+/* Layout Containers */
 .app-container {
-    flex: 1; /* Makes the grid fill available space */
+    max-width: 1200px;
+    margin: 40px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    padding: 50px 20px;
-    max-width: 1300px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
 }
 
-/* --- CARDS --- */
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Project Cards (Index Page) */
 .app-card {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    padding: 30px;
-    border-top: 5px solid var(--primary-green);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* This keeps the button at the bottom! */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    border: 1px solid #ddd;
 }
 
 .app-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px var(--card-glow);
 }
 
 .app-card h2 {
-    color: var(--primary-red);
-    font-family: var(--font-display);
-    margin-top: 0;
-    border-bottom: 2px solid var(--accent-gold);
-    padding-bottom: 10px;
+    font-family: var(--font-header);
+    background: var(--primary-green);
+    color: white;
+    margin: 0;
+    padding: 15px;
+    font-size: 1.5em;
+    text-align: center;
 }
 
-/* --- IMAGES --- */
 .project-image-container {
     width: 100%;
     height: 200px;
-    border-radius: 6px;
-    overflow: hidden;
-    margin: 15px 0;
     background: #eee;
+    overflow: hidden;
 }
 
 .project-image-container img {
@@ -95,52 +102,66 @@ header h1 {
     object-fit: cover;
 }
 
-/* --- TAGS --- */
-.details {
+.app-card .description {
+    padding: 20px;
+    font-size: 0.95em;
+    color: #555;
+    flex-grow: 1;
+}
+
+.app-card .details {
+    padding: 0 20px 20px;
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.details span {
-    font-size: 0.75em;
+    justify-content: space-between;
+    font-size: 0.8em;
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 4px;
-    text-transform: uppercase;
 }
 
-.language { background: var(--primary-green); color: white; }
-.topic { background: var(--accent-gold); color: var(--text-dark); }
+.language { color: var(--primary-red); }
+.topic { color: var(--primary-green); }
 
-/* --- THE BUTTONS (The Gift Tags) --- */
+/* Buttons */
 .cta-button {
     display: block;
+    text-decoration: none;
     background-color: var(--primary-red);
     color: white;
     text-align: center;
     padding: 15px;
-    text-decoration: none;
-    border-radius: 6px;
     font-weight: bold;
-    transition: background 0.3s ease;
-    border-bottom: 4px solid #922b21; /* 3D effect */
+    border-bottom: 5px solid #922b21;
+    transition: all 0.2s;
 }
 
 .cta-button:hover {
     background-color: #e74c3c;
+    filter: brightness(1.1);
 }
 
 .cta-button:active {
-    border-bottom: 0;
-    transform: translateY(4px);
+    border-bottom-width: 0;
+    transform: translateY(5px);
 }
 
-/* --- FOOTER --- */
-footer {
-    background-color: var(--primary-red);
-    color: white;
-    text-align: center;
+/* Project Page Sections */
+.project-section {
+    background: white;
+    margin-bottom: 40px;
     padding: 30px;
-    border-top: 3px solid var(--accent-gold);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.project-section h2 {
+    font-family: var(--font-header);
+    color: var(--primary-red);
+    border-bottom: 3px solid var(--accent-gold);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8em; }
+    .app-container { grid-template-columns: 1fr; }
 }

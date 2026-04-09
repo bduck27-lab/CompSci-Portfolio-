@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 7: Loop-Based Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .gallery-item {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+            transition: transform 0.2s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+        }
+        .gallery-caption {
+            text-align: center;
+            font-size: 1em;
+            margin-top: 15px;
+            color: var(--primary-red);
+            font-weight: bold;
+            font-family: var(--font-header);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🤖 Project 7: The Loop Face & Patterns</h1>
+        <p>Using iteration to create complex geometry and characters.</p>
+    </header>
+
+    <main class="content-container">
+        <section class="project-section">
+            <h2>The Concept</h2>
+            <p>
+                In this project, I explored how <strong>Loops</strong> can be used to generate repetitive patterns and shapes. Instead of drawing every single line manually, I used logic to automate the process, allowing for precise control over spacing and quantity.
+            </p>
+
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="1234.png" alt="Concentric Squares Loop">
+                    <div class="gallery-caption">Iterative Square Growth</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="5678.png" alt="Spiral Pattern Loop">
+                    <div class="gallery-caption">Geometric Spiral Logic</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="9101112.png" alt="Robot Face Design">
+                    <div class="gallery-caption">The Final "Loop" Face</div>
+                </div>
+            </div>
+
+            <h3>Technical Skills Learned</h3>
+            <ul>
+                <li><strong>For-Each Loops:</strong> Automating drawing steps to save time and code space.</li>
+                <li><strong>Incremental Logic:</strong> Changing coordinates or angles slightly with each pass of the loop.</li>
+                <li><strong>UI/UX Design:</strong> Creating an interface to toggle between different drawing modes.</li>
+            </ul>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="cta-button" style="display: inline-block; width: auto; padding: 15px 40px;">⬅ Back to Showcase</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Developed for Computer Science Class | Bradley's Holiday Showcase</p>
+    </footer>
+
+</body>
+</html>

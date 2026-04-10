@@ -42,6 +42,14 @@
             font-weight: bold;
             font-family: var(--font-header);
         }
+        /* Style for the new technical explanation section */
+        .logic-breakdown {
+            background-color: #f9f9f9;
+            border-left: 5px solid var(--primary-green);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
     </style>
 </head>
 <body>
@@ -75,11 +83,24 @@
                 </div>
             </div>
 
+            <div class="logic-breakdown">
+                <h3>Movement & Logic: Moving the Pen</h3>
+                <p>
+                    To create the face and geometric patterns, I utilized <strong>Forward</strong> and <strong>Turn</strong> commands. For example, to draw the eyes or the face border:
+                </p>
+                <ul>
+                    <li><strong>Forward Commands:</strong> I set the pen to move a specific distance to draw a line.</li>
+                    <li><strong>Turning:</strong> After each line, the sprite would turn (usually 90 degrees for the square face) to prepare for the next side.</li>
+                    <li><strong>Looping the Movement:</strong> By putting these commands inside a loop, I could repeat the "Forward and Turn" sequence multiple times (e.g., 4 times for a square) without writing the code over and over.</li>
+                    <li><strong>Pen Positioning:</strong> To move from one eye to the next or down to the mouth, I used the loop to "step" the pen up or over a certain amount of times, ensuring the face remained symmetrical.</li>
+                </ul>
+            </div>
+
             <h3>Technical Skills Learned</h3>
             <ul>
                 <li><strong>For-Each Loops:</strong> Automating drawing steps to save time and code space.</li>
                 <li><strong>Incremental Logic:</strong> Changing coordinates or angles slightly with each pass of the loop.</li>
-                <li><strong>UI/UX Design:</strong> Creating an interface to toggle between different drawing modes.</li>
+                <li><strong>Algorithm Design:</strong> Planning the exact sequence of moves to create a recognizable image.</li>
             </ul>
         </section>
 
